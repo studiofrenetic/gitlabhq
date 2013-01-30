@@ -71,7 +71,6 @@ gem "redcarpet",     "~> 2.2.2"
 gem "github-markup", "~> 0.7.4", require: 'github/markup'
 
 # Servers
-gem "thin", '~> 1.5.0'
 gem "unicorn", "~> 4.4.0"
 
 # Issue tags
@@ -128,6 +127,9 @@ group :development do
 
   # Docs generator
   gem "sdoc"
+
+  # thin instead webrick
+  gem 'thin'
 end
 
 group :development, :test do

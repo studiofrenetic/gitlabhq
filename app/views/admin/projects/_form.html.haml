@@ -1,6 +1,6 @@
 = form_for [:admin, project] do |f|
   -if project.errors.any?
-    .alert-message.block-message.error
+    .alert.alert-error
       %ul
         - project.errors.full_messages.each do |msg|
           %li= msg
@@ -44,6 +44,13 @@
       .input= f.check_box :wiki_enabled
 
   %fieldset.features
+    %legend Public mode:
+    .clearfix
+      = f.label :public do
+        %span Allow public http clone
+      .input= f.check_box :public
+
+  %fieldset.features
     %legend Transfer:
     .control-group
       = f.label :namespace_id do
@@ -58,8 +65,8 @@
 
 
   .actions
-    = f.submit 'Save Project', class: "btn save-btn"
-    = link_to 'Cancel', admin_projects_path, class: "btn cancel-btn"
+    = f.submit 'Save Project', class: "btn btn-save"
+    = link_to 'Cancel', admin_projects_path, class: "btn btn-cancel"
 
 
 
