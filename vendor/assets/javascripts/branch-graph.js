@@ -65,15 +65,15 @@
 
   BranchGraph.prototype.buildGraph = function(){
     var graphWidth = $(this.element).width()
-      , ch = this.mspace * 20 + 20
-      , cw = Math.max(graphWidth, this.mtime * 20 + 20)
+      , ch = this.mspace * 20 + 100
+      , cw = Math.max(graphWidth, this.mtime * 20 + 260)
       , r = Raphael(this.element.get(0), cw, ch)
       , top = r.set()
       , cuday = 0
       , cumonth = ""
       , offsetX = 20
       , offsetY = 60
-      , barWidth = Math.max(graphWidth, this.dayCount * 20 + 80);
+      , barWidth = Math.max(graphWidth, this.dayCount * 20 + 320);
     
     this.raphael = r;
     
@@ -121,7 +121,7 @@
           if (c.space == this.commits[i].space) {
             r.path([
               "M", x, y,
-              "L", x - 20 * (c.time + 1), y
+              "L", cx, cy
             ]).attr({
               stroke: this.colors[c.space], 
               "stroke-width": 2

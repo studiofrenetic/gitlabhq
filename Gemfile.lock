@@ -547,7 +547,7 @@ DEPENDENCIES
   stamp
   test_after_commit
   therubyracer
-  thin (~> 1.5.0)
+  thin
   uglifier (~> 1.3.0)
   unicorn (~> 4.4.0)
   webmock
